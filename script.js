@@ -77,7 +77,16 @@ function getMars() {
     })
 }
 
-
+function getEPIC() {
+    let queryURL = "https://api.nasa.gov/EPIC/api/enhanced/images?api_key=" + nasakey
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(response => {
+        // console.log(response);
+        // postEPIC(response);
+    })
+}
 
 $(document).ready(x => {
 });
