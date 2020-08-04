@@ -58,8 +58,8 @@ function getAPOD() {
         url: queryURL,
         method: "GET"
     }).then(response => {
-
-        console.log(response);
+        pushAPOD(response);
+        // console.log(response);
     });
 
     //   function loadClient() {
@@ -84,9 +84,6 @@ function getAPOD() {
     //               function(err) { console.error("Execute error", err); });
     //   }
 
-
-
-        pushAPOD(response);
 
 }
 
