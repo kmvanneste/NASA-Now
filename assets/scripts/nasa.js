@@ -6,7 +6,11 @@ function nasaCall(searchTerm) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        // $("#nasa-dump").text(JSON.stringify(response));
+        // console.log(response);
+        createCarousel(getNASALinks(response.collection.items.slice(0, 10)))
+
+    })
+}
         console.log(response);
         createCarousel(getNASALinks(response.collection.items.slice(0, 10)))
         // $(".carousel-image").each(function (index) {
