@@ -1,3 +1,4 @@
+
 var nasakey = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9"
 
 
@@ -24,6 +25,7 @@ function getNASALinks(list) {
     });
     return arr
 }
+
 
 function createCarousel(list) {
     let carouselContainer = $("#carousel-content");
@@ -93,3 +95,20 @@ $(document).ready(x => {
 });
 
 // nasaCall("Apollo 11");
+
+// function createCarousel(list) {
+//     let carouselContainer = $("#carousel-content");
+//     carouselContainer.empty();
+//     list.forEach(element => {
+//         console.log(element)
+//         let carouselItem = $("<div>");
+//         carouselItem.addClass("carousel-item");
+//         let carouselImage = $("<img>");
+//         carouselImage.attr("src", element)
+//         carouselImage.addClass("d-block carousel-image mx-auto");
+//         carouselImage.appendTo(carouselItem);
+//         carouselItem.appendTo(carouselContainer);
+        
+//     });
+//     $("#carousel-content div:first").addClass("active");
+// }
