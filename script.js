@@ -65,6 +65,17 @@ function pushAPOD(response) {
     // $("body").css("background-image", "url(" + backgroundURL + ")");
 }
 
+function getMars() {
+    let queryURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity//latest_photos?api_key=" + nasakey
+    // + +"&api_key=" + nasakey
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(response => {
+        console.log(response);
+        // postMars(response);
+    })
+}
 
 
 
