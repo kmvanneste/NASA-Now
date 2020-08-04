@@ -53,3 +53,11 @@ body {
     transform: translateX(-50%);
     display: flex;
 }
+
+.wrapper .sidebar .search-bar a{
+    display: block;
+    width: 40px;
+    background: yellow;
+    height: 40px;
+    line-height: 40px;
+}
