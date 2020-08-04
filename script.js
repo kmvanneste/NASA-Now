@@ -63,16 +63,18 @@ function getAPOD(){
     });
 }
 
+function pushAPOD(response){
         console.log(response);
         backgroundURL = response.hdurl;
-        textp = $("<p>").text(response.explanation)
-        textp.css("background-color", )
-        $("main").append(textp)
-        // let img = $("<img>");
-        // img.attr("src", backgroundURL);
-        // img.appendTo($("main"));
-        $("body").css("background-image", "url(" + backgroundURL + ")");
-    });
+    let apodImg = $("<img>").attr("src", backgroundURL);
+    apodImg.css("max-width", "100%")
+    let textp = $("<p>").text(response.explanation)
+    // textp.css("background-color", )
+    $("#apod").append(apodImg, textp);
+    // $("body").css("background-image", "url(" + backgroundURL + ")");
+}
+
+
     
 });
 
