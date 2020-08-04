@@ -17,13 +17,7 @@ function nasaCall(searchTerm) {
     })
 }
 
-$("#search-button").on("click", function (event) {
-    event.preventDefault();
-    search = $("#search-input").val()
-    nasaCall(search);
-})
-
-function getNASALinks(list){
+function getNASALinks(list) {
     let arr = [];
     list.forEach(element => {
         arr.push(element.links[0].href);
@@ -79,5 +73,7 @@ function pushAPOD(response){
 
 
 
+$(document).ready(x => {
+});
 
 // nasaCall("Apollo 11");
