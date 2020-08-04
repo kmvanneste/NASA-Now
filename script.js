@@ -44,21 +44,21 @@ function createCarousel(list) {
     $("#carousel-content div:first").addClass("active");
 }
 
-<<<<<<< HEAD
+
 // YouTube API CALL 
     var key = "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
     var queryURL = "https://www.googleapis.com/youtube/v3/search?maxResults=1&q=NASA&key=" + key;
     var backgroundURL;
 
-=======
+
 function getAPOD() {
     var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + nasakey;
->>>>>>> 1391f34088767e7ccad5c50037b6bd60f500ae02
+   
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(response => {
-<<<<<<< HEAD
+
         console.log(response);
     });
 
@@ -85,9 +85,9 @@ function getAPOD() {
     //   }
 
 
-=======
+
         pushAPOD(response);
-    });
+
 }
 
 function pushAPOD(response) {
@@ -129,7 +129,7 @@ $(document).ready(x => {
     getEPIC();
     getMars();
 });
->>>>>>> 1391f34088767e7ccad5c50037b6bd60f500ae02
+
 
 // nasaCall("Apollo 11");
 
