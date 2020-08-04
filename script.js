@@ -44,13 +44,8 @@ function createCarousel(list) {
     $("#carousel-content div:first").addClass("active");
 }
 
-$(document).ready(x => {
-    getAPOD();
-});
-
-function getAPOD(){
-    var key = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9";
-    var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + key;
+function getAPOD() {
+    var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + nasakey;
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -59,8 +54,8 @@ function getAPOD(){
     });
 }
 
-function pushAPOD(response){
-    console.log(response);
+function pushAPOD(response) {
+    // console.log(response);
     backgroundURL = response.hdurl;
     let apodImg = $("<img>").attr("src", backgroundURL);
     apodImg.css("max-width", "100%")
