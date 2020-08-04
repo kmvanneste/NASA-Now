@@ -51,13 +51,18 @@ function createCarousel(list) {
 }
 
 $(document).ready(x => {
+
+function getAPOD(){
     var key = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9";
     var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + key;
-    var backgroundURL;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(response => {
+        pushAPOD(response);
+    });
+}
+
         console.log(response);
         backgroundURL = response.hdurl;
         textp = $("<p>").text(response.explanation)
