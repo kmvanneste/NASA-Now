@@ -1,4 +1,4 @@
-function nasaCall(searchTerm) {
+var nasakey = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9"
 
     let key = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9"
 
