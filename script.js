@@ -89,6 +89,9 @@ function getEPIC() {
 }
 
 $(document).ready(x => {
+    getAPOD();
+    getEPIC();
+    getMars();
 });
 
 // nasaCall("Apollo 11");
