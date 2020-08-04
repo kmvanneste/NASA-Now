@@ -25,8 +25,6 @@ function getNASALinks(list) {
     return arr
 }
 
-
-
 function createCarousel(list) {
     let carouselContainer = $("#carousel-content");
     carouselContainer.empty();
@@ -39,7 +37,7 @@ function createCarousel(list) {
         carouselImage.addClass("d-block carousel-image mx-auto");
         carouselImage.appendTo(carouselItem);
         carouselItem.appendTo(carouselContainer);
-        
+
     });
     $("#carousel-content div:first").addClass("active");
 }
