@@ -51,6 +51,8 @@ function createCarousel(list) {
 }
 
 $(document).ready(x => {
+    getAPOD();
+});
 
 function getAPOD(){
     var key = "fdlQhb62Szn7dtpYyag7qcPGVprhsOxQDYoXgeQ9";
@@ -64,8 +66,8 @@ function getAPOD(){
 }
 
 function pushAPOD(response){
-        console.log(response);
-        backgroundURL = response.hdurl;
+    console.log(response);
+    backgroundURL = response.hdurl;
     let apodImg = $("<img>").attr("src", backgroundURL);
     apodImg.css("max-width", "100%")
     let textp = $("<p>").text(response.explanation)
@@ -75,8 +77,7 @@ function pushAPOD(response){
 }
 
 
-    
-});
+
 
 
 // nasaCall("Apollo 11");
