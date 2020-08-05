@@ -1,40 +1,46 @@
-// YouTube API CALL 
-var key = "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
-var queryURL = "https://www.googleapis.com/youtube/v3/search?maxResults=1&q=NASA&key=" + key;
-var backgroundURL;
+$(document).ready((x) => {
+  // YouTube API CALL
+  var key = "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
+  var queryURL =
+    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=NASA&key=" +
+    key;
 
-
-function getYouTubeVideo() {
-var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + nasakey;
-
-$.ajax({
+  $.ajax({
     url: queryURL,
-    method: "GET"
-}).then(response => {
-    pushAPOD(response);
-    // console.log(response);
+    method: "GET",
+  })
+  .then(function (response) {
+    console.log(queryURL);
+    console.log(response);
+  });
+
+  var tag = document.createElement("script");
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("player", {
+      height: "390",
+      width: "640",
+      videoId: "M7lc1UVf-VE",
+      playerVars: { 'rel': 0}
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  function stopVideo() {
+    player.stopVideo();
+  }
 });
-}
-
-//   function loadClient() {
-//     gapi.client.setApiKey("AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8");
-//     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-//         .then(function() { console.log("GAPI client loaded for API"); },
-//               function(err) { console.error("Error loading GAPI client for API", err); });
-//   }
-//   // Make sure the client is loaded and sign-in is complete before calling this method.
-//   function execute() {
-//     return gapi.client.youtube.search.list({
-//       "part": [
-//         "snippet"
-//       ],
-//       "maxResults": 3,
-//       "q": "NASA"
-//     })
-//         .then(function(response) {
-//                 // Handle the results here (response.result has the parsed body).
-//                 console.log("Response", response);
-//               },
-//               function(err) { console.error("Execute error", err); });
-//   }
-
