@@ -14,7 +14,7 @@ function nasaCall(searchTerm) {
 
 function getAPOD() {
     var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + nasakey;
-   
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -60,14 +60,34 @@ function pushMars(response) {
 }
 
 function getEPIC() {
-    let queryURL = "https://api.nasa.gov/EPIC/api/enhanced/images?api_key=" + nasakey
+    let queryURL = "https://api.nasa.gov/EPIC/api/natural/images?api_key=" + nasakey
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(response => {
         // console.log(response);
         // pushEPIC(response);
+        getEPICimg(response)
     })
+}
+
+
+function getEPICimg(response) {
+    let maxIndex = response.length - 1;
+    // console.log(response.length);
+    let date = response[maxIndex].date;
+    let parsedDate = date.split(" ")[0].split("-")
+    let imgID = response[maxIndex].image;
+    // console.log(parsedDate, imgID);
+
+    let [year, month, day] = parsedDate;
+
+    // console.log(year + "\n+++\n" + month + "\n+++\n" + day);
+
+    imgURL = "https://api.nasa.gov/EPIC/archive/natural/" + year + "/" + month + "/" + day + "/png/" + imgID + "?api_key=" + nasakey;
+
+    let epicImg = $("<img>").attr("src", imgURL);
+    $("#epic").append(epicImg);
 }
 
 function createCarousel(list) {
@@ -82,7 +102,7 @@ function createCarousel(list) {
         carouselImage.addClass("d-block carousel-image mx-auto");
         carouselImage.appendTo(carouselItem);
         carouselItem.appendTo(carouselContainer);
-        
+
     });
     $("#carousel-content div:first").addClass("active");
 }
