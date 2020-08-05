@@ -84,9 +84,10 @@ function getEPICimg(response) {
 
     // console.log(year + "\n+++\n" + month + "\n+++\n" + day);
 
-    imgURL = "https://api.nasa.gov/EPIC/archive/natural/" + year + "/" + month + "/" + day + "/png/" + imgID + "?api_key=" + nasakey;
+    imgURL = "https://api.nasa.gov/EPIC/archive/natural/" + year + "/" + month + "/" + day + "/png/" + imgID + ".png?api_key=" + nasakey;
 
     let epicImg = $("<img>").attr("src", imgURL);
+    epicImg.addClass("d-block mx-auto")
     $("#epic").append(epicImg);
 }
 
