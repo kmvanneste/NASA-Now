@@ -81,7 +81,7 @@ function getEPIC() {
     }).then(response => {
         // console.log(response);
         // pushEPIC(response);
-        getEPICimg(response)
+        getEPICimgs(response)
     })
 }
 
@@ -107,6 +107,26 @@ function getEPICimg(response) {
 
     $("#epic").append(epicImg);
 }
+
+//Grabs a list of recent images from the
+//Earth Polychromatic Imaging Camera
+//and appends it to the page inside of a carousel
+function getEPICimgs(response){
+    var epicList = [];
+    console.log(response);
+    response.forEach(element => {
+        let date = element.date;
+        let parsedDate = date.split(" ")[0].split("-");
+        let imgID = element.image;
+        let [year, month, day] = parsedDate;
+        let imgURL = "https://api.nasa.gov/EPIC/archive/natural/" + year + "/" + month + "/" + day + "/png/" + imgID + ".png?api_key=" + nasakey;
+        console.log(imgURL);
+
+        epicList.push(imgURL);
+    });
+    $("#epic").append(createCarousel(epicList, "epic-photos"));
+}
+
 
 /* A function to create and return a carousel element
 from a provided list of links and a id name */
