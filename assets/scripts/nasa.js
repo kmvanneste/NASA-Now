@@ -47,7 +47,7 @@ function getMars() {
 function pushMars(response) {
     // let marsDiv = $("#mars-rover")
     let carouselContainer = $("#mars-photos");
-    response.latest_photos.forEach(item=>{
+    response.latest_photos.forEach(item => {
         let currentImgSrc = item.img_src;
         let carouselImg = $("<img>").attr("src", currentImgSrc).addClass("d-block w-100");
         let carouselItem = $("<div>");
