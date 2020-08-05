@@ -205,6 +205,17 @@ function getNASALinks(list) {
     return arr
 }
 
+function getCMEfromDONKI() {
+    let queryURL = "https://api.nasa.gov/DONKI/CME?api_key=" + nasakey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(response => {
+        
+    })
+}
+
+
 function getDONKI() {
     let queryURL = "https://api.nasa.gov/DONKI/notifications?&type=all&api_key=" + nasakey;
     $.ajax({
