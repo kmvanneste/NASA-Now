@@ -85,7 +85,9 @@ function getEPIC() {
     })
 }
 
-
+//Grabs a single image from the
+//Earth Polychromatic Imaging Camera
+//and appends it to the page
 function getEPICimg(response) {
     let maxIndex = response.length - 1;
     // console.log(response.length);
