@@ -113,7 +113,7 @@ function getEPICimg(response) {
 //and appends it to the page inside of a carousel
 function getEPICimgs(response){
     var epicList = [];
-    console.log(response);
+    // console.log(response);
     response.forEach(element => {
         let date = element.date;
         let parsedDate = date.split(" ")[0].split("-");
@@ -124,7 +124,7 @@ function getEPICimgs(response){
 
         epicList.push(imgURL);
     });
-    $("#epic").append(createCarousel(epicList, "epic-photos"));
+    createCarousel(epicList, "epic-photos");
 }
 
 
@@ -132,17 +132,10 @@ function getEPICimgs(response){
 from a provided list of links and a id name */
 function createCarousel(list, divID) {
 
-    // Create the containing carousel div and add classes and attrs
-    var carouselContainer = $("<div>");
-    carouselContainer.addClass("carousel slide");
-    carouselContainer.attr({
-        id: divID,
-        "data-ride": "carousel"
-    });
 
     // Creates the inner part of the carousel
     // containing the images from the list of links provided
-    let carouselInner = $("<div>").addClass("carousel-inner");
+    let carouselInner = $("#" + divID);
     list.forEach(element => {
         //makes the item div
         let carouselItem = $("<div>");
@@ -179,6 +172,17 @@ function getCMEfromDONKI() {
     })
 }
 
+function getFLRfromDONKI() {
+    let queryURL = "https://api.nasa.gov/DONKI/FLR?start_date=2020-01-01&api_key=" + nasakey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(response => {
+        console.log(response)
+       $("#flr-date").text(response[response.length - 1].startTime);
+    })
+}
+
 
 function getDONKI() {
     let queryURL = "https://api.nasa.gov/DONKI/notifications?&type=all&api_key=" + nasakey;
@@ -203,5 +207,6 @@ $(document).ready(x => {
     getAPOD();
     getEPIC();
     getMars();
-    getDONKI();
+    getCMEfromDONKI();
+    getFLRfromDONKI();
 });
