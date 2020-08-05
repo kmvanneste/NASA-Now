@@ -205,8 +205,28 @@ function getNASALinks(list) {
     return arr
 }
 
+function getDONKI() {
+    let queryURL = "https://api.nasa.gov/DONKI/notifications?&type=all&api_key=" + nasakey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(response => {
+        pushDONKI(response);
+    })
+}
+
+function pushDONKI(response) {
+    response.forEach(element => {
+        let donkiHeader = $("<h6>").text(element.messageType + ": "+ response.messageIssueTime);
+        let donkiMessage = $("<p>").html(element.messageBody);
+        console.log(element.messageBody);
+        $("#donki-dump").append(donkiHeader, donkiMessage);
+    })
+}
+
 $(document).ready(x => {
     getAPOD();
     getEPIC();
     getMars();
+    getDONKI();
 });
