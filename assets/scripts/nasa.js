@@ -106,21 +106,57 @@ function getEPICimg(response) {
     $("#epic").append(epicImg);
 }
 
-function createCarousel(list) {
-    let carouselContainer = $("#carousel-content");
-    carouselContainer.empty();
+function createCarousel(list, divID) {
+
+    let carouselContainer = $("<div>");
+    carouselContainer.addClass("carousel slide");
+    carouselContainer.attr({
+        id: divID,
+        "data-ride": "carousel"
+    });
+    let carouselInner = $("<div>").addClass("carousel-inner");
     list.forEach(element => {
-        console.log(element)
+        // console.log(element)
         let carouselItem = $("<div>");
         carouselItem.addClass("carousel-item");
         let carouselImage = $("<img>");
         carouselImage.attr("src", element)
         carouselImage.addClass("d-block carousel-image mx-auto");
         carouselImage.appendTo(carouselItem);
-        carouselItem.appendTo(carouselContainer);
+        carouselItem.appendTo(carouselInner);
 
     });
+
+    createCarousel.append(carouselInner);
+
     $("#carousel-content div:first").addClass("active");
+    let leftA = $("<a>");
+    leftA.addClass("carousel-control-prev")
+    leftA.attr({
+        href:"#mars-carousel",
+        role:"button"
+    }).attr("data-slide", "prev");
+
+    let leftAsymbol = $("<span>").addClass("carousel-control-prev-icon");
+    leftAsymbol.attr("aria-hidden", "true");
+    let leftAtext = $("<span>").text("Prev").addClass("sr-only");
+    leftA.append(leftAsymbol,leftAtext);
+
+    let rightA = $("<a>");
+    rightA.addClass("carousel-control-next")
+    rightA.attr({
+        href:"#mars-carousel",
+        role:"button"
+    }).attr("data-slide", "next");
+
+    let rightAsymbol = $("<span>").addClass("carousel-control-next-icon");
+    rightAsymbol.attr("aria-hidden", "true");
+    let rightAtext = $("<span>").text("Next").addClass("sr-only");
+    rightA.append(rightAsymbol,rightAtext);
+
+    createCarousel.append(leftA,rightA);
+
+    return createCarousel;
 }
 
 function getNASALinks(list) {
