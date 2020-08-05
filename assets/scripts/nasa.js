@@ -120,7 +120,7 @@ function getEPICimgs(response){
         let imgID = element.image;
         let [year, month, day] = parsedDate;
         let imgURL = "https://api.nasa.gov/EPIC/archive/natural/" + year + "/" + month + "/" + day + "/png/" + imgID + ".png?api_key=" + nasakey;
-        console.log(imgURL);
+        // console.log(imgURL);
 
         epicList.push(imgURL);
     });
