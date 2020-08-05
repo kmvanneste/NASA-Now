@@ -25,11 +25,23 @@ function getAPOD() {
 }
 
 function pushAPOD(response) {
-    backgroundURL = response.hdurl;
-    let apodImg = $("<img>").attr("src", backgroundURL);
-    apodImg.css("max-width", "100%")
-    let textp = $("<p>").text(response.explanation)
-    $("#apod").append(apodImg, textp);
+    apodURL = response.hdurl;
+    apodDiv = $("#apod");
+    apodHeader = $("<h3>").text(response.title);
+    apodDiv.append(apodHeader);
+    if(response.media_type === "video") {
+        let apodVideo = $("<iframe>");
+        apodVideo.attr("src", response.url);
+        apodVideo.addClass("w-100");
+        apodDiv.append(apodVideo);
+    } else if (response.media_type === "image") {
+        let apodImg = $("<img>").attr("src", apodURL);
+        apodImg.addClass("w-100");
+        apodDiv.append(apodImg);
+        // apodImg.css("max-width", "100%")
+    }
+    let textp = $("<p>").text(response.explanation);
+    apodDiv.append(textp);
 }
 
 function getMars() {
