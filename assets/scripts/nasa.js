@@ -27,9 +27,9 @@ function getAPOD() {
 function pushAPOD(response) {
     apodURL = response.hdurl;
     apodDiv = $("#apod");
-    apodHeader = $("<h3>").text(response.title);
+    apodHeader = $("<h5>").text(response.title);
     apodDiv.append(apodHeader);
-    if(response.media_type === "video") {
+    if (response.media_type === "video") {
         let videoDiv = $("<div>").addClass("embed-responsive embed-responsive-16by9");
         let apodVideo = $("<iframe>");
         apodVideo.attr("src", response.url);
@@ -43,7 +43,7 @@ function pushAPOD(response) {
         // apodImg.css("max-width", "100%")
     }
     let textp = $("<p>").text(response.explanation);
-    apodDiv.append(textp);
+    apodDiv.append($("<br>"), textp);
 }
 
 function getMars() {
