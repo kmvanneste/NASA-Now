@@ -12,61 +12,13 @@ body {
     background-color: black;
 }
 
+.navbar-brand{
+    margin-bottom: 23px;
+}
+
 .wrapper {
     display: flex;
     position: relative;
-}
-
-.wrapper .sidebar {
-    position: fixed;
-    width: 200px;
-    height: 100%;
-    background: url(./space_sunrise.jpg);
-    background-size: 400% 210%;
-    padding: 30px 0;
-}
-
-.wrapper .sidebar h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 8px #ffdf00;
-}
-
-.wrapper .sidebar ul li {
-    padding: 15px;
-    border-bottom: 1px solid #fafad2;
-    border-top: 1px solid #fafad2;
-    text-align: center;
-}
-
-.wrapper .sidebar ul li a {
-    color: #fafad2;
-    display: block;
-}
-
-.wrapper .sidebar ul li:hover{
-    background: grey
-}
-
-.wrapper .sidebar .search-bar{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.wrapper .sidebar .search-bar a{
-    display: block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    margin: 0 5px;
-    color: #fafad2;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
 }
 
 .wrapper .main-content {
