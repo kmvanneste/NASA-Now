@@ -4,32 +4,44 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Chivo', sans-serif;
+    font-family: 'Jura', sans-serif;
 }
 
 body {
     color: #fafad2;
-    background-color: black;
+    /* background-image: linear-gradient(to right , black, #ffaa1d, #fafad2, #ffaa1d, black); */
+    background-image: url(nice-stars.jpg);
+}
+
+#navbar {
+    /* background-image: url(space_sunrise.jpg);
+    background-size: 130% 250%; */
+    background: black;
+    margin: 5px;
+    
 }
 
 .navbar-brand{
-    margin-bottom: 25px;
+    margin: 5px;
+    margin-right: 10px;
+    color: whitesmoke;
+    font-family: 'Audiowide', cursive;
+    font-size: 26pt;
+    text-shadow: 2px 2px 8px #fafad2;
 }
 
-.wrapper {
-    display: flex;
-    position: relative;
-}
-
-.wrapper .main-content {
-    width: 100%;
-    margin-left: 200px;
-}
-
-.wrapper .main-content section{
-    padding: 20px;
+section{
+    padding: 50px;
     background: black;
     color: #fafad2;
-    border-bottom: 1px solid #fafad2
+    border: 1px solid #fafad2;
 }
 
+h3 {
+    color: #007bff;
+    padding: 10px;
+}
+
+footer {
+    align-items: center;
+}
