@@ -211,7 +211,7 @@ function getCMEfromDONKI() {
         url: queryURL,
         method: "GET"
     }).then(response => {
-        
+        console.log(response[response.length - 1]);g
     })
 }
 
