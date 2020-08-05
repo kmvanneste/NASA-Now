@@ -1,6 +1,6 @@
 $(document).ready((x) => {
   // YouTube API CALL
-  var key = "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
+  var key = "AIzaSyDSRviXZqJhq-NfohY5q1hhxdjdbnqnPc4";
   var queryURL =
     "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=NASA&key=" +
     key;
@@ -34,7 +34,7 @@ $(document).ready((x) => {
       // height: "390",
       // width: "640",
       videoId: videoID,
-      // playerVars: { 'rel': 0}
+      playerVars: { 'rel': 0}
     });
   }
 
