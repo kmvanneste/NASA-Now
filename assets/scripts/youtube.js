@@ -14,8 +14,9 @@ $(document).ready((x) => {
   .then(function (response) {
     console.log(queryURL);
     console.log(response);
+    console.log(JSON.parse(responseVideoId));
 
-    onYouTubeIframeAPIReady(response.items[0].id.videoID);
+    onYouTubeIframeAPIReady();
     onPlayerReady(event);
     stopVideo();
     autoPlayYouTubeModal();
@@ -37,7 +38,7 @@ $(document).ready((x) => {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: responseVideoId,
+          videoId: 'R_mO5uu853I',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -56,7 +57,7 @@ $(document).ready((x) => {
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
+          setTimeout(stopVideo, 0);
           done = true;
         }
       }
