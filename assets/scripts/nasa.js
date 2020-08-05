@@ -111,7 +111,7 @@ function getEPICimg(response) {
 //Grabs a list of recent images from the
 //Earth Polychromatic Imaging Camera
 //and appends it to the page inside of a carousel
-function getEPICimgs(response){
+function getEPICimgs(response) {
     var epicList = [];
     // console.log(response);
     response.forEach(element => {
@@ -168,18 +168,18 @@ function getCMEfromDONKI() {
         url: queryURL,
         method: "GET"
     }).then(response => {
-       $("#cme-date").text(response[response.length - 1].startTime);
+        $("#cme-date").text(response[response.length - 1].startTime);
     })
 }
 
 function getFLRfromDONKI() {
-    let queryURL = "https://api.nasa.gov/DONKI/FLR?start_date=2020-01-01&api_key=" + nasakey;
+    let queryURL = "https://api.nasa.gov/DONKI/FLR?startDate=2020-01-01&api_key=" + nasakey;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(response => {
         console.log(response)
-       $("#flr-date").text(response[response.length - 1].startTime);
+        $("#flr-date").text(response[response.length - 1].beginTime);
     })
 }
 
@@ -196,7 +196,7 @@ function getDONKI() {
 
 function pushDONKI(response) {
     response.forEach(element => {
-        let donkiHeader = $("<h6>").text(element.messageType + ": "+ response.messageIssueTime);
+        let donkiHeader = $("<h6>").text(element.messageType + ": " + response.messageIssueTime);
         let donkiMessage = $("<p>").html(element.messageBody);
         console.log(element.messageBody);
         $("#donki-dump").append(donkiHeader, donkiMessage);
