@@ -26,19 +26,19 @@ $(document).ready((x) => {
   var firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
+  // This function creates an <iframe> (and YouTube player)
+  // after the API code downloads.
   var player;
   function onYouTubeIframeAPIReady(videoID) {
     player = new YT.Player("player", {
-      height: "390",
-      width: "640",
+      // height: "390",
+      // width: "640",
       videoId: videoID,
-      playerVars: { 'rel': 0}
+      // playerVars: { 'rel': 0}
     });
   }
 
-  // 4. The API will call this function when the video player is ready.
+  // The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.playVideo();
   }
