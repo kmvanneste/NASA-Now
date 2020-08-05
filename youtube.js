@@ -12,8 +12,13 @@ $(document).ready((x) => {
   .then(function (response) {
     console.log(queryURL);
     console.log(response);
+
+    onYouTubeIframeAPIReady();
+    onPlayerReady(event);
+    stopVideo();
   });
 
+  // YouTube Provided iFrame
   var tag = document.createElement("script");
 
   tag.src = "https://www.youtube.com/iframe_api";
@@ -37,10 +42,9 @@ $(document).ready((x) => {
     event.target.playVideo();
   }
 
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
   function stopVideo() {
     player.stopVideo();
   }
+
+  
 });
