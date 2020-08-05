@@ -1,0 +1,107 @@
+<!-- Reference for README -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>NASA Now!</title>
+</head>
+
+<body>
+
+<!-- Left-aligned Navbar -->
+<div class="wrapper">
+        <div class="sidebar justify-content-center">
+            <h2>NASA now!</h2>
+            <ul>
+                <li><a href="#apod">APOD</a></li>
+                <li><a href="#mars-rover">The Mars Rover</a></li>
+                <li><a href="#epic">EPIC</a></li>
+                <li><a href="#donki">DONKI</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+            </ul>
+<!-- search bar in navbar -->
+            <div class="search-bar">
+                <form class="form-inline justify-content-center">
+                    <input class="form-control mx-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-3 mb-3" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+<!-- main content -->
+        <main class="main-content">
+<!-- Optional Potential Header -->
+            <!-- <div class="header">
+                Be the first to see the latest photographs from Mars and media from NASA.
+            </div> -->
+
+            <section id="apod">
+                <h2>APOD = Astronomy Picture of the Day</h2> 
+                <!-- ASTRONOMY PICTURE OF THE DAY -->
+            </section>
+            <section id="mars-rover">                
+                <!-- MARS ROVER PICTURES -->
+                <h2>Latest Pictures from the Curiosity Rover on Mars</h2>
+                <div class="carousel slide" data-ride="carousel" id="mars-carousel">
+                    <div class="carousel-inner" id="mars-photos">
+                        <!-- PICTURES GO HERE -->
+                    </div>
+                    <a class="carousel-control-prev" href="#mars-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#mars-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                </div>
+
+            </section>
+            <section id="epic">
+                <h2>EPIC = Earth Polychromatic Imaging Camera</h2>
+                     <!-- EARTH POLYCHROMATIC IMAGING CAMERA -->
+            </section>
+            <section id="donki">
+                <h2>DONKI = Database of Notifications Knowledge Information</h2>
+                <!-- DATABASE OF NOTIFCATIONS KNOWLEDGE INFORMATION -->
+            </section>
+            <section id="youtube">
+                 <!-- YOUTUBE -->
+                 <a href="#" class="btn btn-light" data-toggle="modal" data-target="#videoModal" data-theVideo="">NASA on YouTube</a>
+
+                 <div class="modalFade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <div id="player" width="100%" height="350">YouTube Video here</div>
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+
+            </section>
+        </main>
+        
+</div>
+    
+    <footer>FOOTER &copy; 2020</footer>
+    <!-- SCRIPTS HERE -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="youtube.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="assets/scripts/nasa.js"></script>
+</body>
+
+</html>
