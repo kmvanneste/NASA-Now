@@ -8,27 +8,31 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chivo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <title>NASA Now!</title>
 </head>
 
 <body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#apod">
-                        <img src="assets/Artboard 1.png" height="60">
-                        </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <a class="navbar-brand" href="#apod">
+            NASA NOW
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Jump To...
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#apod">APOD</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#mars-rover">Mars Rover</a>
@@ -38,78 +42,63 @@
                         <a class="dropdown-item" href="#donki">DONKI</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#youtube">YouTube</a>
-                      </div>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-    <!-- </div> -->
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <!-- End Navbar -->
     <!-- main content -->
-    <main class="main-content">
-        <!-- Optional Potential Header -->
-        <!-- <div class="header">
-                Be the first to see the latest photographs from Mars and media from NASA.
-            </div> -->
+    <main class="main-content container">
+             
+            <section id="apod" class="row justify-content-center">
+                    <h3 class="col-lg-12">Astronomy Picture of the Day</h3>
+                    <!-- ASTRONOMY PICTURE OF THE DAY -->
+            </section>
 
-        <section id="apod">
-            <h3>Astronomy Picture of the Day</h3>
-            <!-- ASTRONOMY PICTURE OF THE DAY -->
-        </section>
-        <section id="mars-rover">
-            <!-- MARS ROVER PICTURES -->
-            <h3>Latest Pictures from the Curiosity Rover on Mars</h3>
-            <div class="carousel slide" data-ride="carousel" id="mars-carousel">
-                <div class="carousel-inner" id="mars-photos">
-                    <!-- PICTURES GO HERE -->
-                </div>
-                <a class="carousel-control-prev" href="#mars-carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#mars-carousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
 
-        </section>
-        <section id="epic">
-            <h3>Earth Polychromatic Imaging Camera</h3>
-            <!-- EARTH POLYCHROMATIC IMAGING CAMERA -->
-            <div class="carousel slide" data-ride="carousel" id="epic-carousel">
-                <div class="carousel-inner" id="epic-photos">
-                    <!-- PICTURES GO HERE -->
-                </div>
-                <a class="carousel-control-prev" href="#epic-carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#epic-carousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </section>
-        <section id="donki">
-            <h3>Database of Notifications Knowledge Information</h3>
-            <!-- DATABASE OF NOTIFCATIONS KNOWLEDGE INFORMATION -->
-            <p>Last Coronal Mass Ejection: <span id="cme-date"></span></p>
-            <p>Last Solar Flare: <span id="flr-date"></span></p>
-        </section>
-        <section id="youtube">
-            <!-- YOUTUBE -->
-            <div id="player">YouTube Video here</div>
-            <!-- <div id="player2">YOUTUBE video 2</div>
+            <section id="mars-rover" class="row">
+                    <!-- MARS ROVER PICTURES -->
+                    <h3 class="col-lg-12">Latest Pictures from the Curiosity Rover on Mars</h3>
+                    <div class="carousel slide col-lg-12" data-ride="carousel" id="mars-carousel">
+                        <div class="carousel-inner" id="mars-photos">
+                            <!-- PICTURES GO HERE -->
+                        </div>
+                        <a class="carousel-control-prev" href="#mars-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#mars-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+            </section>
+
+
+            <section id="epic" class="row">
+                    <h3 class="col-lg-12">Earth Polychromatic Imaging Camera</h3>
+                    <!-- EARTH POLYCHROMATIC IMAGING CAMERA -->
+            </section>
+
+            <section id="donki" class="row">
+                <h3 class="col-lg-12">Database of Notifications Knowledge Information</h3>
+                <!-- DATABASE OF NOTIFCATIONS KNOWLEDGE INFORMATION -->
+            </section>
+
+            <section id="youtube" class="row">
+                <!-- YOUTUBE -->
+                <div id="player">YouTube Video here</div>
+                <!-- <div id="player2">YOUTUBE video 2</div>
                  <div id="player3">YOUTUBE video 3</div> -->
 
-        </section>
-    </main>
-
-    </div>
+            </section>
+        </main>
 
     <footer>FOOTER &copy; 2020</footer>
     <!-- SCRIPTS HERE -->
