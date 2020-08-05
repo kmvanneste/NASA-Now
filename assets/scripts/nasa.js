@@ -113,7 +113,7 @@ from a provided list of links and a id name */
 function createCarousel(list, divID) {
 
     // Create the containing carousel div and add classes and attrs
-    let carouselContainer = $("<div>");
+    var carouselContainer = $("<div>");
     carouselContainer.addClass("carousel slide");
     carouselContainer.attr({
         id: divID,
@@ -130,7 +130,7 @@ function createCarousel(list, divID) {
         //creates the image amd adds classes
         let carouselImage = $("<img>");
         carouselImage.attr("src", element)
-        carouselImage.addClass("d-block carousel-image mx-auto");
+        carouselImage.addClass("d-block carousel-image mx-auto w-100");
         //appends the created elements to the inner
         carouselImage.appendTo(carouselItem);
         carouselItem.appendTo(carouselInner);
@@ -140,7 +140,7 @@ function createCarousel(list, divID) {
     // Activates the first element in the carousel
     carouselInner.children().first().addClass("active");
     // Append the carousel interior to the containing div
-    createCarousel.append(carouselInner);
+    carouselContainer.append(carouselInner);
 
     // Create the left controls for the carousel
     let leftA = $("<a>");
@@ -171,10 +171,10 @@ function createCarousel(list, divID) {
     rightA.append(rightAsymbol,rightAtext);
 
     // Append the controls to the carousel
-    createCarousel.append(leftA,rightA);
+    carouselContainer.append(leftA,rightA);
 
     // Return the created carousel to be used
-    return createCarousel;
+    return carouselContainer;
 }
 
 function getNASALinks(list) {
