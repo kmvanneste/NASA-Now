@@ -175,7 +175,7 @@ function getCMEfromDONKI() {
         url: queryURL,
         method: "GET"
     }).then(response => {
-        console.log(response[response.length - 1]);g
+       $("#cme-date").text(response[response.length - 1].startTime);
     })
 }
 
