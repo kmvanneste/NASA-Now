@@ -9,15 +9,19 @@
 
 body {
     color: #fafad2;
-    /* background-image: linear-gradient(to right , black, #ffaa1d, #fafad2, #ffaa1d, black); */
-    background-image: url(nice-stars.jpg);
+    background-image: url(space_sunrise.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 #navbar {
-    /* background-image: url(space_sunrise.jpg);
-    background-size: 130% 250%; */
     background: black;
     margin: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
     
 }
 
@@ -28,6 +32,10 @@ body {
     font-family: 'Audiowide', cursive;
     font-size: 26pt;
     text-shadow: 2px 2px 8px #fafad2;
+}
+
+main {
+    margin-top: 85px;
 }
 
 section{
