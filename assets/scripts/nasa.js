@@ -106,30 +106,41 @@ function getEPICimg(response) {
     $("#epic").append(epicImg);
 }
 
+/* A function to create and return a carousel element
+from a provided list of links and a id name */
 function createCarousel(list, divID) {
 
+    // Create the containing carousel div and add classes and attrs
     let carouselContainer = $("<div>");
     carouselContainer.addClass("carousel slide");
     carouselContainer.attr({
         id: divID,
         "data-ride": "carousel"
     });
+
+    // Creates the inner part of the carousel
+    // containing the images from the list of links provided
     let carouselInner = $("<div>").addClass("carousel-inner");
     list.forEach(element => {
-        // console.log(element)
+        //makes the item div
         let carouselItem = $("<div>");
         carouselItem.addClass("carousel-item");
+        //creates the image amd adds classes
         let carouselImage = $("<img>");
         carouselImage.attr("src", element)
         carouselImage.addClass("d-block carousel-image mx-auto");
+        //appends the created elements to the inner
         carouselImage.appendTo(carouselItem);
         carouselItem.appendTo(carouselInner);
 
     });
 
+    // Activates the first element in the carousel
+    carouselInner.children().first().addClass("active");
+    // Append the carousel interior to the containing div
     createCarousel.append(carouselInner);
 
-    $("#carousel-content div:first").addClass("active");
+    // Create the left controls for the carousel
     let leftA = $("<a>");
     leftA.addClass("carousel-control-prev")
     leftA.attr({
@@ -137,11 +148,13 @@ function createCarousel(list, divID) {
         role:"button"
     }).attr("data-slide", "prev");
 
+    // Create and append the symbol and text for the left controls
     let leftAsymbol = $("<span>").addClass("carousel-control-prev-icon");
     leftAsymbol.attr("aria-hidden", "true");
     let leftAtext = $("<span>").text("Prev").addClass("sr-only");
     leftA.append(leftAsymbol,leftAtext);
 
+    // Create the right controls for the carousel
     let rightA = $("<a>");
     rightA.addClass("carousel-control-next")
     rightA.attr({
@@ -149,13 +162,16 @@ function createCarousel(list, divID) {
         role:"button"
     }).attr("data-slide", "next");
 
+    // Create and append the symbol and text for the right controls
     let rightAsymbol = $("<span>").addClass("carousel-control-next-icon");
     rightAsymbol.attr("aria-hidden", "true");
     let rightAtext = $("<span>").text("Next").addClass("sr-only");
     rightA.append(rightAsymbol,rightAtext);
 
+    // Append the controls to the carousel
     createCarousel.append(leftA,rightA);
 
+    // Return the created carousel to be used
     return createCarousel;
 }
 
