@@ -8,22 +8,24 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chivo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <title>NASA Now!</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
         <a class="navbar-brand" href="#apod">
-            <img src="assets/Artboard 1.png" height="60">
+            NASA NOW
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -45,18 +47,22 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
+    <br>
+    <!-- End Navbar -->
     <!-- main content -->
-    <div class="container">
-        <main class="main-content container">
-                <section id="apod" class="row">
+    <main class="main-content container">
+             
+            <section id="apod" class="row justify-content-center">
                     <h3 class="col-lg-12">Astronomy Picture of the Day</h3>
                     <!-- ASTRONOMY PICTURE OF THE DAY -->
-                </section>
-                <section id="mars-rover" class="row">
+            </section>
+
+
+            <section id="mars-rover" class="row">
                     <!-- MARS ROVER PICTURES -->
                     <h3 class="col-lg-12">Latest Pictures from the Curiosity Rover on Mars</h3>
                     <div class="carousel slide col-lg-12" data-ride="carousel" id="mars-carousel">
@@ -73,14 +79,18 @@
                         </a>
                     </div>
             </section>
-                <section id="epic" class="row">
+
+
+            <section id="epic" class="row">
                     <h3 class="col-lg-12">Earth Polychromatic Imaging Camera</h3>
                     <!-- EARTH POLYCHROMATIC IMAGING CAMERA -->
             </section>
+
             <section id="donki" class="row">
                 <h3 class="col-lg-12">Database of Notifications Knowledge Information</h3>
                 <!-- DATABASE OF NOTIFCATIONS KNOWLEDGE INFORMATION -->
             </section>
+
             <section id="youtube" class="row">
                 <!-- YOUTUBE -->
                 <div id="player">YouTube Video here</div>
@@ -89,8 +99,6 @@
 
             </section>
         </main>
-
-    </div>
 
     <footer>FOOTER &copy; 2020</footer>
     <!-- SCRIPTS HERE -->
