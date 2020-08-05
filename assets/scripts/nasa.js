@@ -159,42 +159,6 @@ function createCarousel(list, divID) {
 
     // Activates the first element in the carousel
     carouselInner.children().first().addClass("active");
-    // Append the carousel interior to the containing div
-    carouselContainer.append(carouselInner);
-
-    // Create the left controls for the carousel
-    let leftA = $("<a>");
-    leftA.addClass("carousel-control-prev")
-    leftA.attr({
-        href:"#mars-carousel",
-        role:"button"
-    }).attr("data-slide", "prev");
-
-    // Create and append the symbol and text for the left controls
-    let leftAsymbol = $("<span>").addClass("carousel-control-prev-icon");
-    leftAsymbol.attr("aria-hidden", "true");
-    let leftAtext = $("<span>").text("Prev").addClass("sr-only");
-    leftA.append(leftAsymbol,leftAtext);
-
-    // Create the right controls for the carousel
-    let rightA = $("<a>");
-    rightA.addClass("carousel-control-next")
-    rightA.attr({
-        href:"#mars-carousel",
-        role:"button"
-    }).attr("data-slide", "next");
-
-    // Create and append the symbol and text for the right controls
-    let rightAsymbol = $("<span>").addClass("carousel-control-next-icon");
-    rightAsymbol.attr("aria-hidden", "true");
-    let rightAtext = $("<span>").text("Next").addClass("sr-only");
-    rightA.append(rightAsymbol,rightAtext);
-
-    // Append the controls to the carousel
-    carouselContainer.append(leftA,rightA);
-
-    // Return the created carousel to be used
-    return carouselContainer;
 }
 
 function getNASALinks(list) {
