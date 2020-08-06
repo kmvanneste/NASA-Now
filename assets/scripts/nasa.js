@@ -278,11 +278,17 @@ function pushNASAsearch(response){
         cardImg.attr("alt", imgTitle);
         cardImg.addClass("card-image-top");
         let cardBody = $("<div>").addClass("card-body");
-        let cardHeader = $("<h5>").text(imgTitle);
-        cardHeader.addClass("card-title")
+        
+
+        if (imgDescription != imgTitle) {
+            let cardHeader = $("<h5>").text(imgTitle);
+            cardHeader.addClass("card-title")
+            cardBody.append(cardHeader);
+        }
+  
         let cardText = $("<p>").text(imgDescription);
         cardText.addClass("card-text")
-        cardBody.append(cardHeader, cardText);
+        cardBody.append(cardText);
         resultCard.append(cardImg,cardBody);
         resultsDiv.append(resultCard);
     })
