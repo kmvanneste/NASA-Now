@@ -221,7 +221,9 @@ function pushDONKI(response) {
 }
 
 $(document).ready(x => {
-    getAPOD();
+    let todayStr = moment().format("YYYY-MM-DD");
+    // getAPOD();
+    getAPODbyDate(todayStr);
     getEPIC();
     getMars();
     getCMEfromDONKI();
