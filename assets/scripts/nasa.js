@@ -24,6 +24,22 @@ function getAPOD() {
     });
 }
 
+function getAPODbyDate(date) {
+    var queryURL = "https://api.nasa.gov/planetary/apod?date=" + date + "&api_key=" + nasakey;
+    let today = parseInt(moment().format("YYYYMMDD"));
+    // console.log(today);
+    let inputDate = parseInt(date.split("-").reduce((a, b) => a+b))
+    if (inputDate <= today && inputDate >= 19950620){
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(response => {
+            pushAPOD(response);
+            // console.log(response);
+        });
+    }
+}
+
 function pushAPOD(response) {
     apodURL = response.hdurl;
     apodDiv = $("#apod");
@@ -209,4 +225,8 @@ $(document).ready(x => {
     getMars();
     getCMEfromDONKI();
     getFLRfromDONKI();
+});
+
+$("#apod-btn").on("click", function(){
+    getAPODbyDate($("#apod-date").val())
 });
