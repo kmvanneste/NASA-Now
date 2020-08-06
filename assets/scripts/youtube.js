@@ -14,14 +14,13 @@ $(document).ready((x) => {
   .then(function (response) {
     console.log(queryURL);
     console.log(response);
-    console.log(JSON.parse(responseVideoId));
 
     onYouTubeIframeAPIReady();
     onPlayerReady(event);
     stopVideo();
-    autoPlayYouTubeModal();
+    youTubeModal();
 
-    var responseVideoId = response.items[0].id.videoID;
+  });
 
     // YouTube Provided iFrame
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -57,7 +56,7 @@ $(document).ready((x) => {
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 0);
+          setTimeout(stopVideo, 6000);
           done = true;
         }
       }
@@ -65,35 +64,15 @@ $(document).ready((x) => {
         player.stopVideo();
       }
 
-    // // Modal function to get and play youtube video from data tag
-    // function autoPlayYouTubeModal() {
-
-    //   // finds modal in body of html
-    //   var trigger = $("body").find('[data-toggle="modal"]');
-
-    //   // on click
-    //   trigger.on("click", function() {
-
-    //     var theModal = $(this).data("target");
-    //     var videoSRC = $(this).attr("https://www.youtube.com/embed/" + videoIDResponse); 
-    //     var videoSRCauto = videoSRC +"?autoplay=1";
-
-    //   $(theModal + 'iframe').attr('src', videoSRCauto);
-
-    //   $(theModal + 'button.close').on("click", function() {
-
-    //     $(theModal + 'iframe').attr('src', videoSRC);
-
-    //   });
-    //   });
-
-
-    // }
-
-
-
-  });
-
+      function youTubeModal() {
+        var trigger = $("body").find('[data-toggle="modal"]');
+        trigger.click(function () {
+            var theModal = $(this).data("target"),
+                videoSRC = $(this).attr("data-theVideo"),
+                videoSRCauto = videoSRC + "?autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+        });
+    }
   
 });
 
