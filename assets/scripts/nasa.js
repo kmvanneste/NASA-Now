@@ -258,6 +258,9 @@ function getNASAsearch(searchTerm){
     }
 }
 
+function pushNASAsearch(response){
+    
+}
 
 
 // On document load, grab the content from the APIs
@@ -275,6 +278,7 @@ $("#apod-btn").on("click", function(){
     getAPODbyDate($("#apod-date").val());
 });
 
-$("#search-button").on("click", function(){
+$("#search-button").on("click", function(event){
+    event.preventDefault();
     getNASAsearch($("#search-input").val().trim());
 })
