@@ -34,6 +34,50 @@ body {
     text-shadow: 2px 2px 8px #fafad2;
 }
 
+header span.animated {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+    background: #fff;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+header span::before,
+header span::after {
+  position: absolute;
+  top: -23px;
+  content: "";
+  height: 30px;
+  width: 4px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+header span::before {
+  left: -10px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform:    rotate(-45deg);
+  -ms-transform:     rotate(-45deg);
+  -o-transform:      rotate(-45deg);
+  transform:         rotate(-45deg);
+}
+
+header span::after {
+  right: -10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  transform:         rotate(45deg);
+}
+
+
 .empty {
     background-color: transparent;
     width: 100%;
@@ -41,7 +85,7 @@ body {
 }
 
 main {
-    margin-top: 85px;
+    margin-top: -130px;
 }
 
 section{
@@ -58,10 +102,15 @@ h3 {
     text-align: center;
 }
 
+#youtube {
+    margin-bottom: 30px;
+}
+
 .modal-dialog {
     width: fit-content;
 }
 
 footer {
     align-items: center;
+    text-align: center;
 }
