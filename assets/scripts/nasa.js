@@ -244,7 +244,49 @@ function pushDONKI(response) {
     })
 }
 
+function getNASAsearch(searchTerm){
+    if(searchTerm != null){
+        let queryURL = "https://images-api.nasa.gov/search?media_type=image&q=" + searchTerm;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(response => {
+            // console.log(response);
+            pushNASAsearch(response);
+        });
 
+    }
+}
+
+function pushNASAsearch(response){
+    var resultsDiv = $("#nasa-results");
+    resultsDiv.empty();
+    var results = response.collection.items
+    // console.log(results);
+    if (results.length >= 10) {
+        results = results.slice(0,10);
+    }
+    // console.log(results)
+    results.forEach(element => {
+
+        let imgLink = element.links[0].href;
+        let imgDescription = element.data[0].description;
+        let imgTitle = element.data[0].description;
+        let resultCard = $("<div>");
+        resultCard.addClass("card bg-dark");
+        let cardImg = $("<img>").attr("src", imgLink)
+        cardImg.attr("alt", imgTitle);
+        cardImg.addClass("card-image-top");
+        let cardBody = $("<div>").addClass("card-body");
+        let cardHeader = $("<h5>").text(imgTitle);
+        cardHeader.addClass("card-title")
+        let cardText = $("<p>").text(imgDescription);
+        cardText.addClass("card-text")
+        cardBody.append(cardHeader, cardText);
+        resultCard.append(cardImg,cardBody);
+        resultsDiv.append(resultCard);
+    })
+}
 
 
 // On document load, grab the content from the APIs
@@ -262,6 +304,7 @@ $("#apod-btn").on("click", function(){
     getAPODbyDate($("#apod-date").val());
 });
 
-$("#search-button").on("click", function(){
-    getNASAsearch($("#search-input"));
+$("#search-button").on("click", function(event){
+    event.preventDefault();
+    getNASAsearch($("#search-input").val().trim());
 })

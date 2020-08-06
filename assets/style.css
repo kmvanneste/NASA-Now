@@ -130,3 +130,15 @@ footer {
     align-items: center;
     text-align: center;
 }
+
+#nasa-results{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.card {
+    flex: 0 0 auto;
+    min-width: 25rem;
+    max-width: 50rem;
+}
+    
