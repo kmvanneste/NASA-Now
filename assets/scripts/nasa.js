@@ -244,6 +244,9 @@ function pushDONKI(response) {
     })
 }
 
+function getNASAsearch(searchTerm){
+
+}
 
 
 
@@ -263,5 +266,5 @@ $("#apod-btn").on("click", function(){
 });
 
 $("#search-button").on("click", function(){
-    getNASAsearch($("#search-input"));
+    getNASAsearch($("#search-input").val().trim());
 })
