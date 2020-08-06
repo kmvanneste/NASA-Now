@@ -70,6 +70,6 @@ $(document).ready((x) => {
                 videoSRCauto = videoSRC + "?autoplay=1";
             $(theModal + ' iframe').attr('src', videoSRCauto);
         });
-    }
+      }
   
 });
