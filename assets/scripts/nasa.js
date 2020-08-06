@@ -24,9 +24,26 @@ function getAPOD() {
     });
 }
 
+function getAPODbyDate(date) {
+    var queryURL = "https://api.nasa.gov/planetary/apod?date=" + date + "&api_key=" + nasakey;
+    let today = parseInt(moment().format("YYYYMMDD"));
+    // console.log(today);
+    let inputDate = parseInt(date.split("-").reduce((a, b) => a+b))
+    if (inputDate <= today && inputDate >= 19950620){
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(response => {
+            pushAPOD(response);
+            // console.log(response);
+        });
+    }
+}
+
 function pushAPOD(response) {
     apodURL = response.hdurl;
     apodDiv = $("#apod");
+    apodDiv.empty();
     apodHeader = $("<h5>").text(response.title);
     apodDiv.append(apodHeader);
     if (response.media_type === "video") {
@@ -204,9 +221,15 @@ function pushDONKI(response) {
 }
 
 $(document).ready(x => {
-    getAPOD();
+    let todayStr = moment().format("YYYY-MM-DD");
+    // getAPOD();
+    getAPODbyDate(todayStr);
     getEPIC();
     getMars();
     getCMEfromDONKI();
     getFLRfromDONKI();
+});
+
+$("#apod-btn").on("click", function(){
+    getAPODbyDate($("#apod-date").val())
 });
