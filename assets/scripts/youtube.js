@@ -1,11 +1,10 @@
 $(document).ready((x) => {
   // YouTube API CALL
-  // var key = "AIzaSyBiDHX3IxmCc8lrjytfMjRpFnsVPvI5i7U";
+  var key = "AIzaSyBiDHX3IxmCc8lrjytfMjRpFnsVPvI5i7U";
   // "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
   // "AIzaSyB9IppNXuEhH6SDwKTqGX2IvXvnTN-u_Jo";
   // "AIzaSyDSRviXZqJhq-NfohY5q1hhxdjdbnqnPc4";
   
-
   var queryURL =
     "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=NASA&key=" +
     key;
@@ -21,10 +20,8 @@ $(document).ready((x) => {
     onYouTubeIframeAPIReady(response.items[0].id.videoId);
     onPlayerReady(event);
     stopVideo();
-    youTubeModal();
-
+    youTubeModal();  
   });
-
   
     // YouTube Provided iFrame
       // This code loads the IFrame Player API code asynchronously.
