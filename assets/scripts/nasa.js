@@ -215,7 +215,7 @@ function getFLRfromDONKI() {
         url: queryURL,
         method: "GET"
     }).then(response => {
-        console.log(response)
+        // console.log(response)
         $("#flr-date").text(response[response.length - 1].beginTime);
     })
 }

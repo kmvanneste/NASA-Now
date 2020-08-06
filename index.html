@@ -49,7 +49,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    id="search-input">
                 <button id="search-button" class="btn btn-outline-light my-2 my-sm-0">Search</button>
             </form>
         </div>
@@ -64,7 +65,7 @@
 
     <!-- header with bouncy arrow -->
     <header>
-    <span class="animated bounce"></span>
+        <span class="animated bounce"></span>
     </header>
 
     <!-- main content -->
@@ -159,6 +160,15 @@
     <!-- LOCAL SCRIPTS -->
     <script src="./assets/scripts/youtube.js"></script>
     <script src="assets/scripts/nasa.js"></script>
+    <script>
+        $(document).ready(x => {
+            $('.empty').css('height', $(window).height()*1.2);
+        });
+        $(window).resize(function () {
+            $('.empty').css('height', $(window).height()*1.2);
+        });
+
+    </script>
 </body>
 
 </html>
