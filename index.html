@@ -110,11 +110,21 @@
             <!-- DATABASE OF NOTIFCATIONS KNOWLEDGE INFORMATION -->
         </section>
 
-        <section id="youtube" class="row">
+        <section id="youtube" class="row justify-content-center">
             <!-- YOUTUBE -->
-            <div id="player">YouTube Video here</div>
-            <!-- <div id="player2">YOUTUBE video 2</div>
-                 <div id="player3">YOUTUBE video 3</div> -->
+            <a href="#" class="btn btn-light" data-toggle="modal" data-target="#videoModal" data-theVideo="">Checkout NASA on YouTube</a>
+
+            <div class="modal fade bd-example-modal-lg" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                       <div class="modal-body">
+                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                           <div id="player"></div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
 
         </section>
     </main>
