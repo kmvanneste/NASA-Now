@@ -245,7 +245,17 @@ function pushDONKI(response) {
 }
 
 function getNASAsearch(searchTerm){
+    if(searchTerm != null){
+        let queryURL = "https://images-api.nasa.gov/search?media_type=image&q=" + searchTerm;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(response => {
+            console.log(response);
+            pushNASAsearch(response);
+        });
 
+    }
 }
 
 
