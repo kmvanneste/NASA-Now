@@ -159,6 +159,15 @@
     <!-- LOCAL SCRIPTS -->
     <script src="./assets/scripts/youtube.js"></script>
     <script src="assets/scripts/nasa.js"></script>
+    <script>
+        $(document).ready(x => {
+            $('.empty').css('height', $(window).height()*1.2);
+        });
+        $(window).resize(function () {
+            $('.empty').css('height', $(window).height()*1.2);
+        });
+
+    </script>
 </body>
 
 </html>
