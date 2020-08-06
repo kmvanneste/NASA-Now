@@ -233,3 +233,7 @@ $(document).ready(x => {
 $("#apod-btn").on("click", function(){
     getAPODbyDate($("#apod-date").val())
 });
+
+$("#search-button").on("click", function(){
+    getNASAsearch($("#search-input"));
+})
