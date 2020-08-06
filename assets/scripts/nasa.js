@@ -251,7 +251,7 @@ function getNASAsearch(searchTerm){
             url: queryURL,
             method: "GET"
         }).then(response => {
-            console.log(response);
+            // console.log(response);
             pushNASAsearch(response);
         });
 
