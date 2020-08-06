@@ -43,6 +43,7 @@ function getAPODbyDate(date) {
 function pushAPOD(response) {
     apodURL = response.hdurl;
     apodDiv = $("#apod");
+    apodDiv.empty();
     apodHeader = $("<h5>").text(response.title);
     apodDiv.append(apodHeader);
     if (response.media_type === "video") {
