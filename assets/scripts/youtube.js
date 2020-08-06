@@ -18,14 +18,13 @@ $(document).ready((x) => {
     console.log(queryURL);
     console.log(response);
 
-    onYouTubeIframeAPIReady();
+    onYouTubeIframeAPIReady(response.items[0].id.videoId);
     onPlayerReady(event);
     stopVideo();
     youTubeModal();
 
   });
 
-  // console.log(videoId);
   
     // YouTube Provided iFrame
       // This code loads the IFrame Player API code asynchronously.
@@ -37,11 +36,11 @@ $(document).ready((x) => {
 
       // This function creates an <iframe> (and YouTube player) after the API code downloads.
       var player;
-      function onYouTubeIframeAPIReady() {
+      function onYouTubeIframeAPIReady(id) {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'R_mO5uu853I',
+          videoId: id,
         });
       }
 
