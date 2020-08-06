@@ -69,13 +69,17 @@
 
     <!-- main content -->
     <main class="main-content container">
-        
+
         <section class="row justify-content-center">
-            <h3>Astronomy Picture of the Day</h3>
-                <div id="apod" class="col-lg-12 justify-content-center">
+            <h3 class="row">Astronomy Picture of the Day</h3>
+            <div id="apod" class="col-lg-12 justify-content-center">
                 <!-- ASTRONOMY PICTURE OF THE DAY -->
-                </div>
-            </section>
+            </div>
+            <div id="past-apods">
+                <input type="date" id="apod-date" name="apod-date" value="2020-08-06" min="1995-06-20" max="2020-08-06">
+                <button class="btn btn-light" id="apod-btn">GET PAST APOD</button>
+            </div>
+        </section>
 
         <section id="mars-rover" class="row">
             <!-- MARS ROVER PICTURES -->
@@ -126,15 +130,17 @@
 
         <section id="youtube" class="row justify-content-center">
             <!-- YOUTUBE -->
-            <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#videoModal" data-theVideo="">Checkout NASA on YouTube</a>
+            <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#videoModal"
+                data-theVideo="">Checkout NASA on YouTube</a>
 
-            <div class="modal fade bd-example-modal-lg" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+            <div class="modal fade bd-example-modal-lg" id="videoModal" tabindex="-1" role="dialog"
+                aria-labelledby="videoModal" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                       <div class="modal-body">
-                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                           <div id="player"></div>
-                       </div>
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div id="player"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,8 +155,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <!-- LOCAL SCRIPTS -->
     <script src="./assets/scripts/youtube.js"></script>
-    <!-- <script src="script.js"></script> -->
     <script src="assets/scripts/nasa.js"></script>
 </body>
 
