@@ -132,6 +132,8 @@
         </section>
         <hr>
         <section id="nasa-images" class="row justify-content-center">
+            <h3>NASA Search Results:</h3>
+            <hr>
             <div id="nasa-results" class="card-deck"></div>
         </section>
         <hr>
@@ -168,10 +170,10 @@
     <script src="assets/scripts/nasa.js"></script>
     <script>
         $(document).ready(x => {
-            $('.empty').css('height', $(window).height() * 1.2);
+            $('.wrapper2').css('height', $(window).height() * 1.2);
         });
         $(window).resize(function () {
-            $('.empty').css('height', $(window).height() * 1.2);
+            $('.wrapper2').css('height', $(window).height() * 1.2);
         });
 
     </script>
