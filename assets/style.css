@@ -147,7 +147,8 @@ footer {
 }
 .card {
     flex: 0 0 auto;
-    min-width: 25rem;
-    max-width: 50rem;
+    /* min-width: 25rem;
+    max-width: 50rem; */
+    min-width: 50%;
 }
     
