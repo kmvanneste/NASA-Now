@@ -48,3 +48,4 @@ In the time collaborating on this site, we as a group came across a few issues t
 
 <h3 align="right"><a href="https://github.com/kmvanneste/Project-1">Github Link</a></h3>
 <h3 align="right"><a href="https://kmvanneste.github.io/Project-1/">Deployed Link</a></h3>
+<h3 align="right"><a href="https://docs.google.com/presentation/d/14jbv5Tfugzy3w6ZRHbW8VKtMEwqiTT3jIX70Vv9TV0o/edit?usp=sharing">Slideshow Link</a></h3>
