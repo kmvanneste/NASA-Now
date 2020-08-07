@@ -1,14 +1,23 @@
 $(document).ready((x) => {
   // YouTube API CALL
-  // var key = "AIzaSyBiDHX3IxmCc8lrjytfMjRpFnsVPvI5i7U";
-  // "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8";
-  // "AIzaSyB9IppNXuEhH6SDwKTqGX2IvXvnTN-u_Jo";
-  // "AIzaSyDSRviXZqJhq-NfohY5q1hhxdjdbnqnPc4";
-  
-  var queryURL =
-    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=NASA&key=" +
-    key;
+  var key = "AIzaSyB9IppNXuEhH6SDwKTqGX2IvXvnTN-u_Jo";
 
+  // CHRIS "AIzaSyBiDHX3IxmCc8lrjytfMjRpFnsVPvI5i7U";
+  // KRISTEN "AIzaSyDSRviXZqJhq-NfohY5q1hhxdjdbnqnPc4";
+  // ANDIE "AIzaSyB9IppNXuEhH6SDwKTqGX2IvXvnTN-u_Jo";
+  // DYLAN "AIzaSyBihort7mkhzu-EAB_W3I-b1s6RIXYGgl8"; 
+   
+  
+  // var searchTerm = $("#search-input").val().trim()
+
+  // var queryURL =
+  //   "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=NASA+" + searchTerm + "&key=" + key;
+
+    var queryURL =
+    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=NASA+&key=" + key;
+
+
+  // AJAX call for YouTube API response
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -55,5 +64,25 @@ $(document).ready((x) => {
             $(theModal + ' iframe').attr('src', videoSRCauto);
         });
       }
+
+    // function getSearchInput(searchTerm) {
+    //     var queryURL =
+    //       "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=NASA+" + searchTerm + "&key=" + key;
+            
+    //       $.ajax({
+    //         url: queryURL,
+    //         method: "GET"
+    //       }).then(response => {
+    //         getSearchInput(response);
+    //       });
+    // } 
+      
+    // $("#search-button").on("click", function(event){
+    //   event.preventDefault();
+
+    //   var searchTerm = $("#search-input").val().trim()
+
+    //   getSearchInput(searchTerm);
+    // })
   
 });
