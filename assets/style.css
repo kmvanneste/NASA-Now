@@ -44,8 +44,6 @@ header span.animated {
     width: 4px;
     border-radius: 2px;
     background: #fff;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
     animation: bounce 1s infinite;
 }
 
@@ -86,10 +84,21 @@ header span::after {
 }
 
 
-.empty {
+.wrapper1 {
     background-color: transparent;
     width: 100%;
-    height: 1300px;
+    height: 100px;
+}
+
+.wrapper2 {
+    background-color: transparent;
+    width: 100%;
+    height: 925px;
+}
+
+#nasa-logo {
+    --animate-duration: 8s;
+    --animate-delay: 4s;
 }
 
 main {
@@ -138,7 +147,8 @@ footer {
 }
 .card {
     flex: 0 0 auto;
-    min-width: 25rem;
-    max-width: 50rem;
+    /* min-width: 25rem;
+    max-width: 50rem; */
+    min-width: 50%;
 }
     

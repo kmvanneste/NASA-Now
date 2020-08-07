@@ -57,20 +57,23 @@
             </form>
         </div>
     </nav>
-
-    <div class="empty row">
-        <div class="col-lg-12">
-
-        </div>
-    </div>
     <!-- End Navbar -->
+
+    <!-- Empty space, astronaut animation -->
+    
+        <div class="wrapper1"></div>
+            <span id="nasa-logo" class="row justify-content-center animate__animated animate__fadeOut">
+                <!-- <img src="assets/nasa-logo-web-rgb.png" alt="nasa logo animation" style="width: 300px; height: 150px;"> -->
+                <h1>Space awaits...</h1>
+            </span>
+        <div class="wrapper2"></div>
 
     <!-- header with bouncy arrow -->
     <header>
         <span class="animated bounce"></span>
     </header>
 
-    <!-- main content -->
+    <!-- Main Content -->
     <main class="main-content container">
 
         <section class="row justify-content-center">
@@ -131,12 +134,14 @@
         </section>
         <hr>
         <section id="nasa-images" class="row justify-content-center">
+            <h3>NASA Search Results:</h3>
+            <hr>
             <div id="nasa-results" class="card-deck"></div>
         </section>
         <hr>
         <section id="youtube" class="row justify-content-center">
             <!-- YOUTUBE -->
-            <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#videoModal"
+            <a href="#" class="btn btn-outline-danger class animate__animated animate__infinite	infinite animate__pulse" data-toggle="modal" data-target="#videoModal"
                 data-theVideo="">Checkout NASA on YouTube</a>
 
             <div class="modal fade bd-example-modal-lg" id="videoModal" tabindex="-1" role="dialog"
@@ -167,10 +172,10 @@
     <script src="assets/scripts/nasa.js"></script>
     <script>
         $(document).ready(x => {
-            $('.empty').css('height', $(window).height() * 1.2);
+            $('.wrapper2').css('height', $(window).height() * 1.2);
         });
         $(window).resize(function () {
-            $('.empty').css('height', $(window).height() * 1.2);
+            $('.wrapper2').css('height', $(window).height() * 1.2);
         });
 
     </script>
