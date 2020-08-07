@@ -294,12 +294,16 @@ function pushNASAsearch(response){
     })
 }
 
+function setMaxDate(todayStr){
+    $("#apod-date").attr("max", todayStr);
+}
 
 // On document load, grab the content from the APIs
 $(document).ready(x => {
     let todayStr = moment().format("YYYY-MM-DD");
     // getAPOD();
     getAPODbyDate(todayStr);
+    setMaxDate(todayStr);
     getEPIC();
     getMars();
     getCMEfromDONKI();
