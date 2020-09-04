@@ -46,6 +46,6 @@ In the time collaborating on this site, we as a group came across a few issues t
 
 * [YouTube iFrame API Load](https://stackoverflow.com/questions/9782301/youtube-iframe-api-loadvideobyid-error)
 
-<h3 align="right"><a href="https://github.com/kmvanneste/Project-1">Github Link</a></h3>
-<h3 align="right"><a href="https://kmvanneste.github.io/Project-1/">Deployed Link</a></h3>
+<h3 align="right"><a href="https://kmvanneste.github.io/NASA-Now/">Github Link</a></h3>
+<h3 align="right"><a href="https://kmvanneste.github.io/NASA-Now/">Deployed Link</a></h3>
 <h3 align="right"><a href="https://docs.google.com/presentation/d/14jbv5Tfugzy3w6ZRHbW8VKtMEwqiTT3jIX70Vv9TV0o/edit?usp=sharing">Slideshow Link</a></h3>
